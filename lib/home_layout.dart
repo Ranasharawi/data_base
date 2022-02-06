@@ -1,6 +1,6 @@
 import 'package:data_base/archived_tasks.dart';
 import 'package:data_base/done_tasks.dart';
-import 'package:data_base/new_taskes.dart';
+import 'package:data_base/new_tasks.dart';
 import 'package:flutter/material.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -50,7 +50,7 @@ class _HomeLayoutState extends State<HomeLayout> {
             Navigator.pop(context);
             isBottomSheetShown = false;
             setState(() {
-              fabIcon =   Icons.edit;
+              fabIcon = Icons.edit;
             });
           } else
             {
@@ -60,7 +60,6 @@ class _HomeLayoutState extends State<HomeLayout> {
 
 
                     ],
-
                   ),
             );
             isBottomSheetShown=true;
@@ -73,6 +72,10 @@ class _HomeLayoutState extends State<HomeLayout> {
         },
         child: Icon(fabIcon),
       ),
+
+
+
+
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         elevation: 10,
@@ -84,7 +87,7 @@ class _HomeLayoutState extends State<HomeLayout> {
         },
         items: [
           BottomNavigationBarItem(icon:  Icon(Icons.menu),
-          label: '  New Tasks'),
+              label: '  New Tasks'),
           BottomNavigationBarItem(icon:  Icon(Icons.check),
               label: 'Done Tasks') ,
           BottomNavigationBarItem(icon:  Icon(Icons.archive_outlined),
@@ -120,7 +123,7 @@ class _HomeLayoutState extends State<HomeLayout> {
 
   }
   void insertToDatabase(){
-   database.transaction((txn) {
+    database.transaction((txn) {
      txn.rawInsert('INSERT INTO tasks(title, date , time , status) VALUES("first task","1133","2222","new")',
      )
          .then((value) {

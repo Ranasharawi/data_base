@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'home_layout.dart';
+import 'login.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -8,11 +9,7 @@ void main() async {
 
   runApp(MyApp());
   MyApp app = MyApp();
-
-
-
 }
-
 //stateless
 //stateful
 //class My app
@@ -25,7 +22,7 @@ class MyApp extends StatelessWidget
       debugShowCheckedModeBanner:false,
       theme: ThemeData(
       ),
-      home: HomeLayout(),
+      home: Login(),
     );
 
   }
